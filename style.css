@@ -1,0 +1,255 @@
+/* استيراد خط عربي وإنجليزي حديث */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* العنوان والوصف */
+h1 {
+    color: #38bdf8;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* حقل إدخال السنة */
+#birthYear {
+    width: 280px;
+    padding: 12px;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    background-color: #0f172a;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#birthYear:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+#birthmonth{
+     width: 280px;
+    padding: 12px;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    background-color: #0f172a;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#birthmonth:focus{
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+#birthday{
+     width: 280px;
+    padding: 12px;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    background-color: #0f172a;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#birthday:focus{
+    border-color: #38bdf8;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* زر حساب العمر */
+#calculateBtn {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+#calculateBtn:hover {
+    background-color: #7dd3fc;
+}
+
+/* زر الخال/العم */
+#uncle {
+    font-size: 25px;
+    background-color: transparent;
+    color: #fbbf24;
+    border: 2px dashed #fbbf24;
+    margin-top: 10px;
+}
+
+#uncle:hover {
+    background-color: rgba(251, 191, 36, 0.1);
+}
+
+/* النصوص والأجوبة */
+#result {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4ade80;
+    margin-top: 15px;
+}
+
+#nextbirthday{
+    font-size: 23px;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 10s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
+
+/* تنبيه 2008 / مصر */
+#caution {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #f87171;
+    margin-top: 5px;
+}
+
+/* نص يوسف رامي */
+#uncletext {
+    display: block;
+    font-size: 1.2rem;
+    color: #fef08a;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+#note{
+    font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(
+    90deg,
+    rgb(6, 241, 230),
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
+
+/* قسم التواصل والأرقام (div.app) */
+.app {
+    margin-top: 35px;
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #334155;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.app p {
+    color: #f8fafc;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.app ul {
+    list-style: none;
+    padding: 0;
+}
+
+.app li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0;
+    color: #38bdf8;
+    font-size: 1rem;
+    direction: ltr; /* لضبط تنسيق أرقام الهواتف */
+}
+
+/* أيقونة الواتساب */
+.app li img {
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+}
+
+/* رسالة طلب الأفكار */
+#رسالة {
+    margin-top: 15px;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
