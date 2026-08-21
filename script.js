@@ -78,6 +78,10 @@ if (dayleft != 0){
         dayleft = 31 - dayleft
     }
 }
+if (currentMonth == birthmonth && currentDate == birthday){
+    nextbirthday.textContent ="Happy Bitrhday ya habib 2albi" +"❤💝 ;D"
+}
+
     nextbirthday.textContent="Your next Birthday is in " + monthleft +" months " + dayleft +" days"
 
     if (ageyear >= 18){
