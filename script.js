@@ -8,6 +8,7 @@ let caution =document.getElementById("caution");
 let uncle = document.getElementById("uncle"); 
 let uncletext = document.getElementById("uncletext");
 let note = document.getElementById("note");
+let emoji =document.getElementById("emoji");
 const today = new Date();
 const currentYear= today.getFullYear();
 const currentMonth = today.getMonth () + 1;
@@ -19,33 +20,54 @@ button.addEventListener("click", function () {
     let birthday = birthdayInput.value;
     if (birthYear === "" || birthmonth ==="" || birthday ==="") {
         result.textContent = "Please enter your birth year , month and day";
+        nextbirthday.textContent=""
         return;
-    }else if (birthYear > 2026 || birthYear < 1900){
+    }
+    
+   if (!Number.isInteger(Number(birthYear)) || !Number.isInteger(Number(birthmonth)) || !Number.isInteger(Number(birthday))) {
+    result.textContent = "تعرف يا ابراص انت شخص مميز جدا لانك مفكر نفسك كدا ذكي يعني ؟؟!!! ممنوع الارقام العشرية يلا!!! اععععععع";
+    nextbirthday.textContent = "";
+    return;
+}
+
+    else if (birthYear > 2026 || birthYear < 1900){
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
         return;
     }else if (birthmonth > 12 || birthmonth < 1){
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
     return;
     }else if (birthday > 31 || birthmonth < 1){
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
         return;
     }else if (birthmonth == 2 && birthday > 28) {
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
         return;
     }else if (birthmonth == 4 && birthday > 30){
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
         return;
     }else if (birthmonth == 6 && birthday > 30 ){
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
         return;
-    }else if (birthmonth == 9 && birthday > 31){
+    }else if (birthmonth == 9 && birthday > 30){
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
         return;
-    }else if (birthmonth == 11 && birthday > 31){
+    }else if (birthmonth == 11 && birthday > 30){
         result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+        nextbirthday.textContent=""
         return;
     }
-
+ if (birthday < 1){
+   result.textContent="!انت مفكر نفسك كدا ذكي يعني؟"
+   nextbirthday.textContent=""
+   return;
+ }
     let ageyear = currentYear - birthYear;
     let agemonth = currentMonth - birthmonth;
     let ageday = currentDate -birthday;
@@ -64,6 +86,11 @@ button.addEventListener("click", function () {
     agemonth = agemonth + 12
    }
     result.textContent = "Your age is " + ageyear +" years "+ agemonth +" months "+ ageday +" days";
+  if (ageyear < 0){
+    result.textContent= "!انت مفكر نفسك كدا ذكي يعني؟"
+    nextbirthday.textContent=""
+    return;
+  }
 
 let monthleft = 12 - agemonth;
 let dayleft = ageday;
@@ -74,17 +101,16 @@ if (dayleft != 0){
         dayleft = 30 - dayleft
 }else if (currentMonth == 2){
         dayleft = 28 - dayleft
-    }else {
+    } else {
         dayleft = 31 - dayleft
     }
 }
-if (currentMonth == birthmonth && currentDate == birthday){
-    nextbirthday.textContent ="Happy Bitrhday ya habib 2albi" +"❤💝 ;D"
-    return;
-}
-
+  let emoji ="🥳❤️🎂"
     nextbirthday.textContent="Your next Birthday is in " + monthleft +" months " + dayleft +" days"
-
+if(currentMonth == birthmonth && currentDate == birthday ){
+  nextbirthday.textContent =" Happy birthday to you " +emoji
+  return;
+}
     if (ageyear >= 18){
     caution.textContent= "You are not free if you are in Egypt "
 }else if (ageyear < 18){
