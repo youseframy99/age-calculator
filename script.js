@@ -108,7 +108,7 @@ if (dayleft != 0){
   let emoji ="🥳❤️🎂"
     nextbirthday.textContent="Your next Birthday is in " + monthleft +" months " + dayleft +" days"
 if(currentMonth == birthmonth && currentDate == birthday ){
-  nextbirthday.textContent =" Happy birthday to you " +emoji
+  nextbirthday.textContent = emoji + " كل سنة وانت طيب يا حبيب قلبي  " +emoji
   return;
 }
     if (ageyear >= 18){
